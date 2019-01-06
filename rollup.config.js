@@ -67,7 +67,7 @@ export default [{
 
 },
 {
-  input: "out-tsc/app/src/app/dyn/dyn.module.ngfactory.js",
+  input: "out-tsc/app/src/app/dyn/dyn.module.js",
   output: [
     // ES module version, for modern browsers
     {

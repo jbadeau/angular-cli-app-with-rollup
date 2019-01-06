@@ -1,12 +1,13 @@
-import { enableProdMode } from '@angular/core';
-import { platformBrowser } from '@angular/platform-browser';
+import { enableProdMode,  ɵrenderComponent , createInjector} from '@angular/core';
 
-import { AppModuleNgFactory } from './app/app.module.ngfactory';
 import { environment } from './environments/environment';
+import { AppComponent } from './app/app.component';
+import { AppModule } from './app/app.module';
 
 if (environment.production) {
   enableProdMode();
 }
 
-platformBrowser().bootstrapModuleFactory(AppModuleNgFactory)
-  .catch(err => console.error(err));
+const injector = createInjector(AppModule);
+console.log(injector);
+ɵrenderComponent(AppComponent, {injector});
